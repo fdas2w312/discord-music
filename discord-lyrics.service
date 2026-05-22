@@ -1,0 +1,15 @@
+[Unit]
+Description=Discord Lyrics Scroller
+After=network.target
+
+[Service]
+Type=simple
+User=%i
+WorkingDirectory=/opt/discord-lyrics-scroller
+EnvironmentFile=/opt/discord-lyrics-scroller/.env
+ExecStart=/opt/discord-lyrics-scroller/venv/bin/python main.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
